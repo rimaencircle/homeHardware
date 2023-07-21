@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Agenda';
+    src: url('Agenda-LightItalic.eot');
+    src: url('Agenda-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Agenda-LightItalic.woff2') format('woff2'),
+        url('Agenda-LightItalic.woff') format('woff'),
+        url('Agenda-LightItalic.ttf') format('truetype'),
+        url('Agenda-LightItalic.svg#Agenda-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agenda';
+    src: url('Agenda-Light.eot');
+    src: url('Agenda-Light.eot?#iefix') format('embedded-opentype'),
+        url('Agenda-Light.woff2') format('woff2'),
+        url('Agenda-Light.woff') format('woff'),
+        url('Agenda-Light.ttf') format('truetype'),
+        url('Agenda-Light.svg#Agenda-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agenda';
+    src: url('Agenda-Semibold.eot');
+    src: url('Agenda-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('Agenda-Semibold.woff2') format('woff2'),
+        url('Agenda-Semibold.woff') format('woff'),
+        url('Agenda-Semibold.ttf') format('truetype'),
+        url('Agenda-Semibold.svg#Agenda-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agenda';
+    src: url('Agenda-Black.eot');
+    src: url('Agenda-Black.eot?#iefix') format('embedded-opentype'),
+        url('Agenda-Black.woff2') format('woff2'),
+        url('Agenda-Black.woff') format('woff'),
+        url('Agenda-Black.ttf') format('truetype'),
+        url('Agenda-Black.svg#Agenda-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Agenda';
+    src: url('Agenda-Bold.eot');
+    src: url('Agenda-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Agenda-Bold.woff2') format('woff2'),
+        url('Agenda-Bold.woff') format('woff'),
+        url('Agenda-Bold.ttf') format('truetype'),
+        url('Agenda-Bold.svg#Agenda-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

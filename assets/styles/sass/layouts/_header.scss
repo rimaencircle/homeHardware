@@ -1,0 +1,423 @@
+.sticky-nav{
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    transition: all .3s;
+    z-index: 2;
+
+    &.is-sticky{
+        transform: translateY(0);
+
+    }
+    @media #{$tablet} {
+        transform: translateY(0);
+    }
+    .title-bar{
+        padding: 0;
+        background-color: $primary;
+
+        .top-navigation{
+            display: flex;
+            justify-content: flex-end;
+            padding: 31px 0;
+
+            @media #{$md} {
+               padding: 13px 0;
+            }
+            @media #{$small} {
+               padding: 11px 0 10px;
+            }
+
+            .sidebar_toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                @include small-fonts;
+                text-transform: capitalize;
+                color: $white;
+                align-items: center;
+
+                @media #{$md} {
+                  gap: 4px;
+                }
+
+                img{
+                    height: 32px;
+                    width: 32px; 
+
+                    @media #{$md} {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.hh_header{
+    position: relative;
+    z-index: 99;
+
+    .logo-wrapper{
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 160px;
+        width: 350px;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+
+        @media #{$tablet} {
+            height: 120px;
+         }
+         @media #{$md} {
+            width: 182px;
+            height: 70px;
+            padding-left: 30px;
+        }
+        @media #{$small} {
+            width: 148px;
+            height: 60px;
+            padding-left: 25px;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('../images/logo-bg.svg');
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: left bottom;
+            height: 160px;
+            width: 350px;
+            animation: slideLeft 500ms ease-in;
+
+            @media #{$tablet} {
+                height: 120px;
+            }
+            @media #{$md} {
+                width: 182px;
+                height: 70px;
+                background-position: right top; 
+            }
+            @media #{$small} {
+                height: 60px;
+                width: 148px;
+                background-image: url('../images/logo-bg-mobile.svg');
+            }
+        }
+
+        .brand{
+            opacity: 1;
+            animation: fadeIn 1.5s ease-in;
+
+            @media #{$md} {
+               width: 80px;
+               height: 34px;
+            }
+        }
+    }
+    .top-bar-navigation{
+        background-color: $black;
+        margin-bottom: 1px;
+        padding: 8px 0 7px;
+
+        @media #{$tablet} {
+            display: none;
+        }
+
+        .hh_header_contacts {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+
+            a{
+                color: $white;
+                padding: 0;
+                @include small-fonts;
+
+                &:hover{
+                    color: $yellow;
+                }
+            }
+
+            .social-menu{
+                gap: 10px;
+
+                li{
+                    a{
+                        font-size: 14px;
+                        line-height: auto;
+                        &:hover{
+                            transform: rotateY(360deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .top-navigation{
+        background-color: $primary;
+
+        @media #{$tablet} {
+            display: none;
+        }
+
+        .top-bar{
+            background-color: transparent;
+            padding: 0;
+
+            ul{
+                background-color: transparent; 
+                margin: 0 -13px;
+                display: flex;
+                gap: 30px;
+
+                li{
+                    a{
+                        @include large-fonts;
+                        color: $white;
+                        padding: 33px 13px 34px;
+                        position: relative;
+                        @include transition__500;
+
+                        &:hover{
+                            background-color: $richBlack;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.is-sticky{
+        .logo-wrapper{
+            height: 120px;
+            transition: all .3s;
+
+            @media #{$md} {
+                height: 70px;
+            }
+            @media #{$small} {
+                height: 60px;
+            }
+
+            &::before{
+                height: 120px;
+                transition: all .3s;
+
+                @media #{$md} {
+                    height: 70px;
+                }
+                @media #{$small} {
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
+.humburgur{
+    background-color: $black-85;
+    position: fixed;
+    top: 120px;
+    right: -100%;
+    bottom: 0;
+    width:480px;
+    transition: all 0.8s ease-in-out;
+
+    @media #{$md} {
+        top: 70px;
+    }
+    @media #{$small} {
+        width: 100%;
+        top:60px;
+    }
+
+    &.open{
+        right: 0;
+    }
+    .humburgur_body{
+        padding: 65px 20px 0px;
+        height: calc(100vh - 249px);
+        overflow-y: auto;
+        
+        @media #{$md} {
+            height: calc(100vh - 200px);
+            padding-top: 45px;
+        }
+        @media #{$small} {
+            height: calc(100vh - 167px);
+            width: 100%;
+            top:60px;
+            padding-top: 30px;
+        }
+        .search-form{
+            padding-bottom: 65px;
+            border-bottom: 1px solid $white-25;
+
+            @media #{$md} {
+                padding-bottom: 45px;
+            }
+            @media #{$small} {
+                padding-bottom: 30px;
+            }
+            
+            form{
+                max-width: 354px;
+                margin: 0 auto;
+                position: relative;
+
+                input{
+                    height: 46px;
+                    padding: 12px;
+                    border-radius: 2px;
+                    padding-right: 85px;
+                    margin-bottom: 0;
+                    @include p2;
+                    color: $black-85;
+
+                    @media #{$small} {
+                        height: 35px;
+                        padding: 9px 12px 8px;
+                        text-transform: capitalize;
+                    }
+
+                    &::placeholder{
+                        @include p2;
+                        color: $midGrey;
+                        text-transform: capitalize;
+                    }
+                }
+                .search-icon{
+                    width: 80px;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0 2px 2px 0;
+                    background-color: $primary;
+
+                    @media #{$small} {
+                       width: 60px;
+                    }
+                    
+                    img{
+                        height: 28px;
+                        width: 28px;
+
+                        @media #{$small} {
+                            height: 14px;
+                            width: 14px;
+                         }
+                    }
+                }
+            }
+        }
+        .menu{
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 0;
+
+            @media #{$small} {
+              padding: 30px 0;
+            }
+            li{
+                display: block;
+                color: $white;
+                @include large-fonts;
+
+                a{
+                    padding: 0;
+                    color: $white;
+                    @include large-fonts;
+
+                    &:hover{
+                        color: $yellow;
+                    }
+                }
+
+                & + li{
+                    margin-top: 43px;
+                }
+            }
+            .sub-menu{
+                margin: 0;
+                margin-top: 9px;
+                li{
+                    @include small-fonts;
+                    color: $white;
+
+                    & + li{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        .main-menu{
+            border-bottom: 1px solid $white-25;
+        }
+    }
+    .humburgur_footer{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        .btn{
+            height: 111px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            @include p3;
+            color: $white;
+            flex: 1;
+
+            @media #{$small} {
+                height: 80px;
+                gap: 10px;
+            }
+
+            img{
+                height: 24px;
+                width: 24px;
+
+                @media #{$small} {
+                   height: 18px;
+                   width: 18px;
+                }
+            }
+
+            &.call-btn{
+                background-color: $primary-25;
+                @include transition__500;
+
+                &:hover{
+                    background-color: $primary;
+                }
+            }
+            &.mail-btn{
+                background-color: $yellow-25;
+                @include transition__500;
+
+                &:hover{
+                    background-color: $yellow;
+                }
+            }
+        }
+    }
+
+}
