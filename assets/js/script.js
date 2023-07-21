@@ -74,7 +74,17 @@ $(document).ready(function () {
             once: false,
         });
     });
-
+    const left_anim = gsap.utils.toArray('.left_animet');
+      gsap.registerPlugin(ScrollTrigger);
+      left_anim.forEach((leng, i) => {
+      const anim = gsap.fromTo(leng.children, { autoAlpha: 0, x: "-100%" }, { x: 0, autoAlpha: 1, duration: 1, delay: 0.25, stagger: 0.5 });
+      ScrollTrigger.create({
+        trigger: leng,
+        ease: "power3.in",
+        animation: anim,
+        toggleActions: 'play none none none',
+      });
+    });
     $('.sidebar_toggle').click(function(){
         $('.humburgur').toggleClass('open');
         // $('html').toggleClass('overflow-hidden');
